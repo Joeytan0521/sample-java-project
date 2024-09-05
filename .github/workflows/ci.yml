@@ -2,9 +2,15 @@ name: CI
 
 on:
   push:
-    branches: [ master, ci/config-update ]
+    branches: 
+      - master
+      - ci/config-update
+      - update-ci.yml
+      - add/new-feature/verbose
+      - patch-1
   pull_request:
-    branches: [ master ]
+    branches: 
+      - master
 
 jobs:
   build:
