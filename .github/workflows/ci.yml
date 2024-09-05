@@ -59,3 +59,12 @@ jobs:
     - name: Verify Docker container is running  
       run: docker ps 
 
+    - name: Cache Gradle dependencies
+    uses: actions/cache@v3
+    with:
+      path: ~/.gradle/caches
+      key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+      restore-keys: |
+        ${{ runner.os }}-gradle-
+
+
